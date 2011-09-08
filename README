@@ -1,0 +1,30 @@
+Python Wave Gen
+----------------
+From: http://abovesobelow.com/CFAudio/
+
+The Idea
+
+These are the beginnings of a python based audio programming tool, I want to eventually have a parser that will parse syntax that is very close to what Context Free Art has for their 2D recursive image generator. So they start with basic shapes like SQAURE, CIRCLE and TRIANGLE and then you can assign attributes, and through the grammar recurse the shapes and their properties in various ways. So far I have a SINE, SAW, TRIANGLE, PULSE, NOISE generating functions with the ability to control amplitude, frequency and duration of the generated waveform. Eventually, I'd like to be able to figure out how to do the math for a filter (freq./cutoff) and other fun effects.
+
+Here's a little example of what you can do with the code I've cranked out so far. Just append this to the bottom of "The Code" and run, it takes less than a minute to render on my machine, may take longer depending on processor/memory.
+
+for i in range(60,440,10):
+    sine(i,70, .1)
+for i in range(60,440,10):
+    tri(i,70, .1)
+for i in range(60,440,10):
+    pulse(i,70, .1, 50)
+for i in range(60,440,10):
+    saw(i,70, .1, 0)
+noise(70, 2)
+output.close()
+
+Well, I hope you understand the basis of my final vision! The code is below and uses only standard python libraries. The 'shh' function just writes \x00 to the file for the specified duration.
+
+--------------------
+
+Extra info for git README
+
+I am not really working on this actively just trying github out. I do like this idea and want to keep working on it, maybe even make it into a python module properly once I learn how to do that properly.
+
+Thanks for checking out the project!
